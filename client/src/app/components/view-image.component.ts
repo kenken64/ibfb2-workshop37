@@ -23,11 +23,6 @@ export class ViewImageComponent implements OnInit, OnDestroy{
       this.actRoute.params.subscribe(
         async (params)=> {
           this.postId = params['postId'];
-          // this.fileUpSvc.getImage(this.postId)
-          //   .then((result)=>{
-          //     this.imageData = result.image;
-          //     console.log(this.imageData);
-          // });
           let r = await this.fileUpSvc.getImage(this.postId);
           console.log(r);
           this.imageData = r.image;

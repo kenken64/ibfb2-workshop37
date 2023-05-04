@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UploadResult } from '../model/upload-result';
-import { firstValueFrom } from 'rxjs';
+import { lastValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +17,6 @@ export class CameraService {
     formData.set("complain", form['complain']);
     formData.set("file", image);
     
-    return firstValueFrom(this.httpClient.post<UploadResult>("/upload", formData));
+    return lastValueFrom(this.httpClient.post<UploadResult>("/upload", formData));
   }
 }
