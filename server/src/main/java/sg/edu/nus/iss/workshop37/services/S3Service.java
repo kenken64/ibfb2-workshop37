@@ -26,11 +26,13 @@ public class S3Service {
     @Value("${DO_STORAGE_BUCKETNAME}")
     private String bucketName;
 
-    public String upload(MultipartFile file) throws IOException{
+    public String upload(MultipartFile file, String title, String complain) throws IOException{
         Map<String, String> userData = new HashMap<>();
         userData.put("name", "Kenneth");
         userData.put("uploadDateTime", LocalDateTime.now().toString());
         userData.put("originalFilename", file.getOriginalFilename());
+        userData.put("title", title);
+        userData.put("complain", complain);
         
         ObjectMetadata metadata = new ObjectMetadata();
         metadata.setContentType(file.getContentType());
