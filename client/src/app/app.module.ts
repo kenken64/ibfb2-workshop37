@@ -11,12 +11,14 @@ import { CameraComponent } from './components/camera.component';
 import { UploadComponent } from './components/upload.component';
 import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ViewImageComponent } from './components/view-image.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CameraComponent,
-    UploadComponent
+    UploadComponent,
+    ViewImageComponent
   ],
   imports: [
     BrowserModule,
