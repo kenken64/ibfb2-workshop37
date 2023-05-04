@@ -38,6 +38,7 @@ public class S3Service {
         metadata.setUserMetadata(userData);
         String key = UUID.randomUUID().toString()
             .substring(0, 8);
+        System.out.println(">>>> " + file.getOriginalFilename());
         StringTokenizer tk = new StringTokenizer(file.getOriginalFilename(), ".");
         int count = 0;
         String filenameExt = "";
@@ -47,6 +48,7 @@ public class S3Service {
                 break;
             }else{
                 filenameExt = tk.nextToken();
+                count++;
             }
         }
         if(filenameExt.equals("blob"))
